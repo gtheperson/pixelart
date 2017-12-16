@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+<!-- George pixel art maker. -->
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet"> 
+  <title>Pixel Art Maker</title>
+</head>
+
+<body>
+	<h1>Pixel Art Maker</h1>
+  
+	<div>
+		<form>
+		  <p class="grid-sel">
+        Grid Height: <input name="height" type="number" value="10" min="1" max="50"> 
+      </p>
+      <p class="grid-sel">
+			Grid Width: <input name="width" type="number" value="10" min="1" max="50"> 
+      </p>
+      <span>
+			<button class="go">Make!</button>
+		  </span>
+		</form>
+  </div>
+  
+  <div>
+    <button class="popup-button-cell">Select Cell Size</button>
+    <button class="popup-button-col">Select Colour</button>
+  </div>
+  
+  <div>
+    <div class="popup-cell"> 
+      <div class =popup-text-cell>
+        <input class="cell-size" type="range" min="1" max="20" value="7">
+        <button class="set-cell">Go!</button>
+        <button class="close" type="close">X</button>
+        <table class="example"><tr><td class="example"></td></tr></table>
+      </div>
+    </div>
+  </div>
+  
+  <div>
+		<form class="colorForm">
+		    <span>
+				<!-- popup for colour select -->
+				<div class="popup-col">
+					<div class="popup-text-col">
+						<input class="colorShow">
+            <button class="close colclose" type="close">X</button>
+						<p class="popup-range">Red:   <input class="red-num" type="range" min="0" max="255" value="0"></p>
+						<p class="popup-range">Blue:  <input class="blue-num" type="range" min="0" max="255" value="0"> </p>
+						<p class="popup-range">Green: <input class="green-num" type="range" min="0" max="255" value="0"> </p>
+            <p>Dropper: <button class="dropper">o--</button></p>
+            <p><button class="done close" type="close">Done!</button></p>
+					</div>	
+				</div>
+		    </span>
+		</form>
+  </div>
+
+	<div>
+    <table class="grid">
+      <tr>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td class="selected"> </td>
+        <td class="selected"> </td>
+        <td class="selected"> </td>
+        <td> </td>
+        <td> </td>
+        <td class="selected"> </td>
+        <td> </td>
+        <td class="selected"> </td>
+        <td> </td>
+        <td class="selected"> </td>
+      </tr>
+      <tr>
+        <td class="selected"> </td>
+        <td> </td>
+        <td> </td>
+        <td class="selected"> </td>
+        <td> </td>
+        <td class="selected"> </td>
+        <td> </td>
+        <td> </td>
+        <td class="selected"> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td class="selected"> </td>
+        <td class="selected"> </td>
+        <td class="selected"> </td>
+        <td> </td>
+        <td> </td>
+        <td class="selected"> </td>
+        <td> </td>
+        <td> </td>
+        <td class="selected"> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td class="selected"> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td class="selected"> </td>
+        <td> </td>
+        <td class="selected"> </td>
+        <td> </td>
+        <td class="selected"> </td>
+      </tr>
+      <tr>
+        <td class="selected"> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td class="selected"> </td>
+        <td> </td>
+        <td class="selected"> </td>
+        <td> </td>
+        <td class="selected"> </td>
+      </tr>
+      <tr style="border: 1px solid black">
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td class="selected"> </td>
+        <td class="selected"> </td>
+        <td class="selected"> </td>
+        <td class="selected"> </td>
+        <td class="selected"> </td>
+        <td class="selected"> </td>
+        <td class="selected"> </td>
+        <td class="selected"> </td>
+        <td class="selected"> </td>
+        <td class="selected"> </td>
+      </tr>
+      <tr>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      </table>
+  </div>
+  <div>
+    <button class="clearGrid">Clear Grid</button>
+  </div>
+  <!-- call the script after everything is created! -->
+  <script type="text/javascript" src="app.js"></script>
+</body>
