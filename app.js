@@ -1,5 +1,14 @@
 // javascript for George's pixel art maker
 
+// eye dropper tool
+var dropper = false;
+
+$(".dropper").on("click", function() {
+  dropper = true;
+  event.preventDefault();
+  $(".popup-text-col").removeClass("popup-text-vis");
+})
+
 // on click of a cell change it to set colour
 $("td").on("click", function() {
   if (dropper === true){
@@ -18,7 +27,7 @@ var selColor = "rgb(" + selRed + ", " + selGreen + ", " + selBlue + ")";
 
 // changes color variables when form is changed
 $(".red-num").on("change", function() {
-  selRed = $(this).val();
+	  selRed = $(this).val();
 });
 $(".blue-num").on("change", function() {
   selBlue = $(this).val();
@@ -31,13 +40,13 @@ $(".colorForm").on("change", "input", function() {
   $(".colorShow").css("background-color", selColor);
 });
 
-// eye dropper tool
-var dropper = false;
-$(".dropper").on("click", function() {
-  dropper = true;
-  event.preventDefault();
-	$(".popup-text-col").removeClass("popup-text-vis");
-})
+// also do it when done is clicked, makes using the dropper simpler
+$(".done").on("click", function() {
+	selRed = $(".red-num").val();
+	selBlue = $(".blue-num").val();
+	selGreen = $(".green-num").val();
+	selColor = "rgb(" + selRed + ", " + selGreen + ", " + selBlue + ")";
+});
 
 // make grid to specifications
 var gridWidth = 10;
@@ -64,7 +73,12 @@ $(".go").on("click", function(event) {
   }
   // reapplies this so works on new cells
   $("td").on("click", function() {
-	$(this).css("background-color", selColor);
+  if (dropper === true){
+    selColor = $(this).css("background-color");
+    dropper = false;
+  } else {
+	  $(this).css("background-color", selColor);
+  }
 });
 })
 ;

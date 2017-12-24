@@ -14,10 +14,10 @@ div {
   text-align: center;
 }
 td {
-		border: 1px solid grey;
-		backgroud-color: white;
-		height: 7vmin;
-		width: 7vmin;
+	border: 1px solid grey;
+	background-color: white;
+	height: 7vmin;
+	width: 7vmin;
     padding: 0px;
 	}
 table {
@@ -48,6 +48,11 @@ span {
   margin-right: 5px;
   padding: 2px;
 }
+table {
+  margin: auto;
+  margin-top: -35px;
+  border: 10px solid #2d2828;
+}
 .grid-sel {
   margin: auto;
   background-color: #99ef58;
@@ -67,11 +72,6 @@ span {
   margin: 5%;
   margin-top: 10%;
   margin-bottom: 10%;
-}
-table {
-  margin: auto;
-  margin-top: -35px;
-  border: 10px solid #2d2828;
 }
 .close {
   float: right;
@@ -159,4 +159,13 @@ table {
 .done {
   margin-top: -30px;
   float: none;
+}
+.flag {
+	position: absolute;
+	right: 20px;
+	top: 10px;
+	width: 50px;
+}
+.flagpic {
+	width: 50px;
 }
